@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+env/
+soc.db
+node_modules/
+dist/
+.build/
+.DS_Store
+*.log
+.env
+alembic.ini
+coverage/

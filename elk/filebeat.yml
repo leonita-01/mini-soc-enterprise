@@ -1,0 +1,11 @@
+filebeat.inputs:
+  - type: filestream
+    id: nginx
+    paths: ["/var/log/nginx/access.log"]
+    fields: { source_type: nginx }
+  - type: filestream
+    id: authlog
+    paths: ["/var/log/auth.log"]
+    fields: { source_type: ssh_auth }
+output.logstash:
+  hosts: ["localhost:5044"]

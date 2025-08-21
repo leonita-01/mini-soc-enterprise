@@ -1,0 +1,3 @@
+class Notifier:
+    def notify(self, alert: dict):
+        ...

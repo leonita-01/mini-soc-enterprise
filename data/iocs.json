@@ -1,0 +1,13 @@
+{
+  "ips": [
+    "1.2.3.4",
+    "203.0.113.10"
+  ],
+  "domains": [
+    "malicious.example",
+    "badstuff"
+  ],
+  "hashes": [
+    "44d88612fea8a8f36de82e1278abb02f"
+  ]
+}

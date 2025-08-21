@@ -1,0 +1,5 @@
+winlogbeat.event_logs:
+  - name: Security
+    event_id: 4624, 4625, 4768, 4769, 4776, 4627
+output.logstash:
+  hosts: ["your-logstash-host:5044"]

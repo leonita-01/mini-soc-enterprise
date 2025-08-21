@@ -1,0 +1,24 @@
+﻿host: "demo-host"
+ioc_path: "data/iocs.json"
+api_key: "dev-key-12345"
+jwt_secret: "dev-secret"
+rules:
+  ssh_bruteforce: { threshold: 5, window_minutes: 3 }
+  port_scan: { distinct_ports: 20, window_minutes: 2 }
+  http_404_spray: { threshold: 30, window_minutes: 5 }
+  http_bad_ua: { threshold: 20, window_minutes: 5, bad_uas: ["curl","wget","sqlmap","nikto"] }
+  http_auth_spike: { threshold: 15, window_minutes: 5, statuses: ["401","403"] }
+  http_sqli_cmdi: { threshold: 5, window_minutes: 5 }
+  dns_tunnel: { txt_threshold: 30, window_minutes: 5, min_avg_label_len: 20, min_queries_for_len_check: 15 }
+  kerberos_rdp: { enabled: true }
+suppression:
+  whitelisted_ips: ["127.0.0.1","10.0.0.0/8","192.168.0.0/16"]
+  suppressed_paths: ["/healthcheck"]
+alerts:
+  pagerduty: { enabled: false }
+  email: { enabled: false, to: "soc@example.com" }
+  webhook: { enabled: false, url: "https://example.com/hook" }
+slack:
+  enabled: false
+  webhook: ""
+
